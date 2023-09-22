@@ -1,6 +1,6 @@
 <?php
-include_once  "../classes/comments/comments.php";
-$view = new CommentsView();
+use App\CommentsView;
+$view = new CommentsView($parameters);
 ?>
 <!doctype html>
 <html lang="en">
@@ -13,10 +13,10 @@ $view = new CommentsView();
     <meta name="description" content="Description"/>
     <meta name="robots" content="index,follow">
 
-    <!-- Bootstrap CSS -->
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/d525a51c3b.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Battambang:wght@100;300;400;700;900&family=Patua+One&display=swap" rel="stylesheet">
@@ -31,14 +31,14 @@ include 'header.php';
 ?>
 <div class="col-md-6 col-6 comments m-4">
     <h3>Edit comment</h3>
-<form action="<?="../../single-page.php?id=$view->id"?>" method="post">
+<form action="<?="../../page/$view->id"?>" method="post">
     <input type="hidden" name="page" value="<?=$view->id;?>">
     <div class="mb-3">
         <textarea name="text"  class="form-control" id="exampleFormControlTextarea1" rows="3"><?=$view->comment->text?></textarea>
     </div>
     <div class="col-12">
         <button type="submit" name="edit_comment" class="btn btn-primary">Save changes</button>
-        <input type="hidden" name="comment_id" value="<?=$_GET['edit_id'];?>">
+        <input type="hidden" name="comment_id" value="<?=$view->parameters->Uri[1];?>">
     </div>
 </form>
 </div>

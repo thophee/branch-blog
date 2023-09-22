@@ -1,6 +1,6 @@
 <?php
-include '../../classes/users/admin-users.php';
-$view = new AdminUsersView();
+use App\AdminUsersView;
+$view = new AdminUsersView($parameters);
 ?>
 <html lang="en">
 <head>
@@ -15,7 +15,7 @@ $view = new AdminUsersView();
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/d525a51c3b.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Battambang:wght@100;300;400;700;900&family=Patua+One&display=swap" rel="stylesheet">
@@ -26,7 +26,7 @@ $view = new AdminUsersView();
 <body>
 
 <?php
-include '../../include/header.php';
+include '../app/include/header.php';
 ?>
 
 <div class="container">
@@ -34,25 +34,25 @@ include '../../include/header.php';
         <div class="sidebar col-3">
             <ul>
                 <li>
-                    <a href="../posts/index.php">Posts</a>
+                    <a href="/admin-panel">Posts</a>
                 </li>
             </ul>
             <ul>
                 <li>
-                    <a href="index.php">Users</a>
+                    <a href="/users">Users</a>
                 </li>
             </ul>
             <ul>
                 <li>
-                    <a href="../topics/index.php">Categories</a>
+                    <a href="/topics">Categories</a>
                 </li>
             </ul>
         </div>
         <div class="posts col-9">
             <div class="button  row">
-                <a href="create.php" class="col-2 btn btn-primary">Create</a>
+                <a href="/create-user" class="col-2 btn btn-primary">Create</a>
                 <span class="col-1"></span>
-                <a href="index.php" class="col-2 btn btn-success">Manage</a>
+                <a href="/users" class="col-2 btn btn-success">Manage</a>
             </div>
             <div class="row title-table">
                 <h2>Users</h2>
@@ -70,8 +70,8 @@ include '../../include/header.php';
                 <?php else: ?>
                 <div class="author col-2">User</div>
                 <?php endif; ?>
-                <div class="edit col-2"><a href="edit.php?edit_id=<?=$user->id;?>">edit</a></div>
-                <div class="delete col-2"><a href="edit.php?delete_id=<?=$user->id;?>">delete</a></div>
+                <div class="edit col-2"><a href="edit-user/<?=$user->id;?>">edit</a></div>
+                <div class="delete col-2"><a href="delete-user/<?=$user->id;?>/delete">delete</a></div>
             </div>
                 <?php endforeach;?>
         </div>
@@ -79,7 +79,7 @@ include '../../include/header.php';
 </div>
 <a href=""></a>
 <?php
-include '../../include/footer.php';
+include '../app/include/footer.php';
 ?>
 
 

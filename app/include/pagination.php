@@ -1,8 +1,8 @@
 <?php
-include_once __DIR__ . '/../classes/pagination/pagination.php';
+use App\PaginationController;
 $paginationSideCount = 2;
 
-$pageCount = Pagination::getPagesAmount();
+$pageCount = PaginationController::getPagesAmount();
 $currentItem = $_GET['page_num'];
 if(empty($currentItem) || $currentItem < 1) {
     $currentItem = 1;

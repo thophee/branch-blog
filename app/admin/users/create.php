@@ -1,6 +1,8 @@
 <?php
-include '../../classes/users/admin-users.php';
-$view = new AdminUsersView();
+use App\AdminUsersView;
+use App\ErrorHandler;
+
+$view = new AdminUsersView($parameters);
 ?>
 
 
@@ -17,7 +19,7 @@ $view = new AdminUsersView();
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/d525a51c3b.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Battambang:wght@100;300;400;700;900&family=Patua+One&display=swap" rel="stylesheet">
@@ -28,7 +30,7 @@ $view = new AdminUsersView();
 <body>
 
 <?php
-include '../../include/header.php';
+include '../app/include/header.php';
 ?>
 
 <div class="container">
@@ -36,25 +38,25 @@ include '../../include/header.php';
         <div class="sidebar col-3">
             <ul>
                 <li>
-                    <a href="../posts/index.php">Posts</a>
+                    <a href="/admin-panel">Posts</a>
                 </li>
             </ul>
             <ul>
                 <li>
-                    <a href="index.php">Users</a>
+                    <a href="/users">Users</a>
                 </li>
             </ul>
             <ul>
                 <li>
-                    <a href="../topics/index.php">Categories</a>
+                    <a href="/topics">Categories</a>
                 </li>
             </ul>
         </div>
         <div class="posts col-9">
             <div class="button  row">
-                <a href="create.php" class="col-2 btn btn-primary">Create</a>
+                <a href="/create-user" class="col-2 btn btn-primary">Create</a>
                 <span class="col-1"></span>
-                <a href="index.php" class="col-2 btn btn-success">Manage</a>
+                <a href="/users" class="col-2 btn btn-success">Manage</a>
             </div>
             <div class="row title-table">
                 <h2>Create new user</h2>
@@ -62,7 +64,7 @@ include '../../include/header.php';
             <div class="error">
             </div>
             <div class="row add-post">
-                <form action="create.php" method="post">
+                <form method="post">
                     <div class="text-danger mb2">
                         <?php
                         foreach (['empty_fields', 'user_exists', 'password_not_match'] as $error) {
@@ -98,7 +100,7 @@ include '../../include/header.php';
 <a href=""></a>
 
 <?php
-include '../../include/footer.php';
+include '../app/include/footer.php';
 ?>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>

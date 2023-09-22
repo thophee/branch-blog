@@ -1,11 +1,11 @@
 <?php
-include_once  __DIR__ .'/../classes/comments/comments.php';
-include_once __DIR__ . '/../classes/error-controller.class.php';
-$view = new CommentsView();
+use App\CommentsView;
+use App\ErrorHandler;
+$view = new CommentsView($parameters);
 ?>
 <div class="col-md-12 col-12 comments">
     <h3>Leave a comment</h3>
-    <form action="<?="../../single-page.php?id=$view->id"?>" method="post">
+    <form action="<?="../../page/$view->id"?>" method="post">
         <div class="mb-3">
             <textarea name="text" class="form-control" id="text" rows="3"></textarea>
         </div>
@@ -30,11 +30,11 @@ $view = new CommentsView();
                     ?>
                     <div class="buttons">
                         <?php if($_SESSION['admin']): ?>
-                    <div class="edit col-2"><a href="app/include/edit.php?id=<?=$view->id?>&edit_id=<?=$comment->id;?>">edit</a></div>
-                    <div class="delete col-2"><a href="app/include/comments.php?delete_id=<?=$comment->id;?>&page_id=<?=$view->id?>">delete</a></div>
+                    <div class="edit col-2"><a href="../edit-comment/<?=$view->id?>/<?=$comment->id;?>">edit</a></div>
+                    <div class="delete col-2"><a href="../comments/<?=$view->id?>/<?=$comment->id;?>/delete">delete</a></div>
                         <?php elseif(!$_SESSION['admin'] && $comment->userID == $_SESSION['user_id']): ?>
-                        <div class="edit col-2"><a href="app/include/edit.php?id=<?=$view->id?>&edit_id=<?=$comment->id;?>">edit</a></div>
-                        <div class="delete col-2"><a href="app/include/comments.php?delete_id=<?=$comment->id;?>&page_id=<?=$view->id?>">delete</a></div>
+                            <div class="edit col-2"><a href="../edit-comment/<?=$view->id?>/<?=$comment->id;?>">edit</a></div>
+                            <div class="delete col-2"><a href="../comments/<?=$view->id?>/<?=$comment->id;?>">delete</a></div>
                         <?php endif;?>
                     </div>
                     <?php if($comment->isModified == 1): ?>
