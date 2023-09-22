@@ -24,7 +24,9 @@ $userController = new UserController();
                     <?php if($_SESSION['isLoggedIn']): ?>
                     <li><a href="<?='/logout' ?>">Log out</a></li>
                     <?php endif; ?>
-
+                    <?php if(!$_SESSION['isLoggedIn'] && $_SERVER['REQUEST_URI'] != '/login' && $_SERVER['REQUEST_URI'] != '/registration'): ?>
+                        <li><a href="<?='/login' ?>">Sign in</a></li>
+                    <?php endif; ?>
                 </ul>
             </nav>
         </div>

@@ -26,7 +26,7 @@ $view = new AdminPostsView($parameters);
 <body>
 
 <?php
-include '../app/include/header.php';
+include 'app/include/header.php';
 ?>
 
 <div class="container">
@@ -105,7 +105,7 @@ include '../app/include/header.php';
 </div>
 <a href=""></a>
 <?php
-include '../app/include/footer.php';
+include 'app/include/footer.php';
 ?>
 <script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js"></script>
 

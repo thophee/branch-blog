@@ -10,9 +10,9 @@ final class Connection {
     public static function getInstance(): PDO {
         if (self::$instance === null) {
             try {
-                $username = "nia74";
+                $username = "root";
                 $password = "Raven1234!";
-                self::$instance = new PDO('mysql:host=localhost;dbname=nia74', $username, $password);
+                self::$instance = new PDO('mysql:host=localhost;dbname=blog_db', $username, $password);
             } catch (PDOException $e) {
                 print "Error!: " . $e->getMessage() . "</br>";
                 die();

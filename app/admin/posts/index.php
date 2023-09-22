@@ -26,7 +26,7 @@ $view = new AdminPostsView($parameters);
 <body>
 
 <?php
-include '../app/include/header.php';
+include 'app/include/header.php';
 ?>
 
 <div class="container">
@@ -81,7 +81,7 @@ include '../app/include/header.php';
 </div>
 <a href=""></a>
 <?php
-include '../app/include/footer.php';
+include 'app/include/footer.php';
 ?>
 
 

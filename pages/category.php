@@ -23,7 +23,7 @@ $view = new MainPageView($parameters);
 </head>
 <body>
 <?php
-include '../app/include/header.php';
+include 'app/include/header.php';
 ?>
 <div class="container category_container">
     <div class="content row">
@@ -66,7 +66,7 @@ include '../app/include/header.php';
 </div>
 
 <?php
-include '../app/include/footer.php';
+include 'app/include/footer.php';
 ?>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>

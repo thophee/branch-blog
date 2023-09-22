@@ -3,7 +3,7 @@ use App\AdminUsersView;
 use App\ErrorHandler;
 
 $view = new AdminUsersView($parameters);
-var_dump($view);
+
 ?>
 
 <html lang="en">
@@ -29,7 +29,7 @@ var_dump($view);
 <body>
 
 <?php
-include '../app/include/header.php';
+include 'app/include/header.php';
 ?>
 
 <div class="container">
@@ -104,7 +104,7 @@ include '../app/include/header.php';
 <a href=""></a>
 
 <?php
-include '../app/include/footer.php';
+include 'app/include/footer.php';
 ?>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>

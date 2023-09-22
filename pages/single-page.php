@@ -28,7 +28,7 @@ $view = new SinglePageView($parameters);
 <body>
 
 <?php
-include '../app/include/header.php';
+include 'app/include/header.php';
 
 ?>
 
@@ -49,13 +49,15 @@ include '../app/include/header.php';
                 <div class="single_post_text post-text col-12">
                     <?=$view->getPost()->content;?>
                 </div>
-                <?php include_once '../app/include/comments.php' ?>
+                <?php if($_SESSION['isLoggedIn']): ?>
+                    <?php include_once 'app/include/comments.php' ?>
+                <?php endif; ?>
             </div>
         </div>
     </div>
 </div>
 <?php
-include '../app/include/footer.php';
+include 'app/include/footer.php';
 ?>
 
 

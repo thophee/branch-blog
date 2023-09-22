@@ -29,7 +29,7 @@ $view = new MainPageView($parameters);
 <body>
 
 <?php
-include '../app/include/header.php';
+include 'app/include/header.php';
 ?>
 <div class="modal" id="modal">test</div>
 <div id="overlay">
@@ -89,7 +89,7 @@ include '../app/include/header.php';
             <?php if(empty($view->getPaginatedPosts())):?>
                <h3 class="mt-5">No posts yet</h3>
             <?php else :
-            include '../app/include/pagination.php';
+            include 'app/include/pagination.php';
                 endif;?>
 
         </div>
@@ -107,8 +107,8 @@ include '../app/include/header.php';
 </div>
 
 <?php
-include '../app/include/footer.php';
-include '../app/include/popup.php';
+include 'app/include/footer.php';
+include 'app/include/popup.php';
 ?>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
